@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IProcessedStyleSet } from '../../Styling';
 import { Label, ILabelStyleProps, ILabelStyles } from '../../Label';
 import { Icon } from '../../Icon';
+import { Button } from '../Button';
 import {
   Async,
   DelayedRender,
@@ -219,7 +220,11 @@ export class TextFieldBase extends React.Component<ITextFieldProps, ITextFieldSt
               <div className={this._classNames.prefix}>{onRenderPrefix(this.props, this._onRenderPrefix)}</div>
             )}
             {multiline ? this._renderTextArea() : this._renderInput()}
-            {iconProps && <Icon className={this._classNames.icon} {...iconProps} />}
+            {iconProps && (
+              <Button className={this._classNames.iconButton}>
+                <Icon className={this._classNames.icon} {...iconProps} />
+              </Button>
+            )}
             {(suffix !== undefined || this.props.onRenderSuffix) && (
               <div className={this._classNames.suffix}>{onRenderSuffix(this.props, this._onRenderSuffix)}</div>
             )}

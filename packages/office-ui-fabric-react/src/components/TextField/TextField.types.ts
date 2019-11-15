@@ -343,6 +343,11 @@ export interface ITextFieldStyles extends IStyleSet<ITextFieldStyles> {
   field: IStyle;
 
   /**
+   * Style for icon button prop element.
+   */
+  iconButton: IStyle;
+
+  /**
    * Style for icon prop element.
    */
   icon: IStyle;

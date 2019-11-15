@@ -354,11 +354,39 @@ export function getStyles(props: ITextFieldStyleProps): ITextFieldStyles {
         },
       inputClassName
     ],
-    icon: [
+    iconButton: [
       multiline && {
         paddingRight: 24,
         alignItems: 'flex-end'
       },
+      {
+        background: 'none',
+        color: 'inherit',
+        border: 'none',
+        padding: 0,
+        font: 'inherit',
+        cursor: 'pointer',
+        outline: 'inherit',
+        width: 'auto',
+        margin: 'auto',
+        selectors: {
+          '&:active, &:focus, &:hover': {
+            background: 'none'
+          }
+        }
+      },
+      disabled && {
+        background: semanticColors.disabledBackground,
+        cursor: 'arrow',
+        selectors: {
+          '&:active, &:focus, &:hover': {
+            background: semanticColors.disabledBackground,
+            cursor: 'arrow'
+          }
+        }
+      }
+    ],
+    icon: [
       {
         pointerEvents: 'none',
         position: 'absolute',
